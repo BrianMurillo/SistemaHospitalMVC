@@ -11,18 +11,30 @@ public class Servicio {
     private int patientId;
     private int serviceCharges;
     private int serviceId;
+    private String patientName;
     
-    public Servicio(String serviceName,String serviceDate,int patientId,int serviceCharges,int servicesId){
+    public Servicio(String serviceName,String serviceDate,int patientId,int serviceCharges,int servicesId,String patientName){
         this.serviceName=serviceName;
         this.serviceDate=serviceDate;
         this.patientId=patientId;
         this.serviceCharges=serviceCharges;
         this.serviceId=servicesId;
+        this.patientName=patientName;
     }
     public Servicio(){
         
     }
 
+    public String getPatientName() {
+        return patientName;
+    }
+
+    public void setPatientName(String patientName) {
+        this.patientName = patientName;
+    }
+    
+    
+    
     public String getServiceName() {
         return serviceName;
     }

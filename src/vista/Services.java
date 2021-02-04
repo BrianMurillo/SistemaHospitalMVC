@@ -55,9 +55,12 @@ public class Services extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
         jLabel9 = new javax.swing.JLabel();
+        lblMinimiza = new javax.swing.JLabel();
+        lblCerrar = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(0, 204, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -181,6 +184,12 @@ public class Services extends javax.swing.JFrame {
         jLabel9.setText("ID service");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, 30));
 
+        lblMinimiza.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/minimiza.png"))); // NOI18N
+        jPanel1.add(lblMinimiza, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, -1, -1));
+
+        lblCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cerrar.png"))); // NOI18N
+        jPanel1.add(lblCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, -1, -1));
+
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/services.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 410));
@@ -232,6 +241,8 @@ public class Services extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
+    public javax.swing.JLabel lblCerrar;
+    public javax.swing.JLabel lblMinimiza;
     public javax.swing.JTextField txtCargosServicio;
     public javax.swing.JTextField txtFechaServicio;
     public javax.swing.JTextField txtIdPaciente;
