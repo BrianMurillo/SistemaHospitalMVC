@@ -98,7 +98,7 @@ public class ServicioDao {
                 service.setServiceName(rs.getString("ServiceName"));
                 service.setServiceDate(rs.getString("ServiceDate"));
                 service.setPatientId(rs.getInt("PatientID"));
-                service.setServiceCharges(rs.getInt("ServicesCharges"));
+                service.setServiceCharges(rs.getInt("ServiceCharges"));
                 service.setServiceId(rs.getInt("ServiceID"));    
                 ListaServicio.add(service);
             }

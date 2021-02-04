@@ -48,7 +48,7 @@ public class Services extends javax.swing.JFrame {
         btnObtenerDatos = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        TableServices = new javax.swing.JTable();
+        TablePaciente = new javax.swing.JTable();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
@@ -144,7 +144,7 @@ public class Services extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 255, 255));
 
-        TableServices.setModel(new javax.swing.table.DefaultTableModel(
+        TablePaciente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -152,7 +152,7 @@ public class Services extends javax.swing.JFrame {
                 "ID_PACIENTE", "NOMBRE_PACIENTE"
             }
         ));
-        jScrollPane1.setViewportView(TableServices);
+        jScrollPane1.setViewportView(TablePaciente);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -209,7 +209,7 @@ public class Services extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JTable TableServices;
+    public javax.swing.JTable TablePaciente;
     public javax.swing.JButton btnActualizar;
     public javax.swing.JButton btnBorrar;
     public javax.swing.JButton btnGuardar;
