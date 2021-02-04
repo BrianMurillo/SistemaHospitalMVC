@@ -53,6 +53,7 @@ public class ListaServicio extends javax.swing.JFrame {
                 "NOMBRE_SERVICIO", "FECHA_SERVICIO", "ID_PACIENTE", "NOMBRE_PACIENTE", "CARGOS_SERVICIO", "ID_SERVICIO"
             }
         ));
+        TableServicio.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(TableServicio);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 600, 300));
