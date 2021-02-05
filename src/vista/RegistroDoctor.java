@@ -65,9 +65,12 @@ public class RegistroDoctor extends javax.swing.JFrame {
         btnBorrar = new javax.swing.JButton();
         btnObtenerDatos = new javax.swing.JButton();
         btnActualizar = new javax.swing.JButton();
+        lblMinimiza = new javax.swing.JLabel();
+        lblCerrar = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -117,42 +120,42 @@ public class RegistroDoctor extends javax.swing.JFrame {
         jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 394, -1, -1));
 
         txtIdDoctor.setBackground(new java.awt.Color(102, 255, 255));
-        txtIdDoctor.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        txtIdDoctor.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         txtIdDoctor.setBorder(null);
         jPanel3.add(txtIdDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 170, -1));
 
         txtNameDoctor.setBackground(new java.awt.Color(102, 255, 255));
-        txtNameDoctor.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        txtNameDoctor.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         txtNameDoctor.setBorder(null);
         jPanel3.add(txtNameDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 170, -1));
 
         txtFatherDoctor.setBackground(new java.awt.Color(102, 255, 255));
-        txtFatherDoctor.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        txtFatherDoctor.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         txtFatherDoctor.setBorder(null);
         jPanel3.add(txtFatherDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 170, -1));
 
         txtEmailDoctor.setBackground(new java.awt.Color(102, 255, 255));
-        txtEmailDoctor.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        txtEmailDoctor.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         txtEmailDoctor.setBorder(null);
         jPanel3.add(txtEmailDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 170, -1));
 
         txtNumberDoctor.setBackground(new java.awt.Color(102, 255, 255));
-        txtNumberDoctor.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        txtNumberDoctor.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         txtNumberDoctor.setBorder(null);
         jPanel3.add(txtNumberDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 170, -1));
 
         txtAddressDoctor.setBackground(new java.awt.Color(102, 255, 255));
-        txtAddressDoctor.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        txtAddressDoctor.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         txtAddressDoctor.setBorder(null);
         jPanel3.add(txtAddressDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 170, -1));
 
         txtQualificationsDoctor.setBackground(new java.awt.Color(102, 255, 255));
-        txtQualificationsDoctor.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        txtQualificationsDoctor.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         txtQualificationsDoctor.setBorder(null);
         jPanel3.add(txtQualificationsDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 170, -1));
 
         txtFechaDoctor.setBackground(new java.awt.Color(102, 255, 255));
-        txtFechaDoctor.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        txtFechaDoctor.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         txtFechaDoctor.setBorder(null);
         txtFechaDoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -161,9 +164,11 @@ public class RegistroDoctor extends javax.swing.JFrame {
         });
         jPanel3.add(txtFechaDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 80, -1));
 
+        cbxGenero.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         cbxGenero.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "M", "F" }));
         jPanel3.add(cbxGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 328, -1, -1));
 
+        cbxGrupo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         cbxGrupo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-" }));
         jPanel3.add(cbxGrupo, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 362, -1, -1));
 
@@ -239,6 +244,12 @@ public class RegistroDoctor extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 120, 210));
 
+        lblMinimiza.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/minimiza.png"))); // NOI18N
+        jPanel1.add(lblMinimiza, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 40, -1, -1));
+
+        lblCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cerrar.png"))); // NOI18N
+        jPanel1.add(lblCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, -1, -1));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Doc.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 519, 531));
 
@@ -297,6 +308,8 @@ public class RegistroDoctor extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
+    public javax.swing.JLabel lblCerrar;
+    public javax.swing.JLabel lblMinimiza;
     public javax.swing.JTextField txtAddressDoctor;
     public javax.swing.JTextField txtEmailDoctor;
     public javax.swing.JTextField txtFatherDoctor;

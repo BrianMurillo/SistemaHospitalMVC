@@ -126,7 +126,5 @@ public class PacienteDao {
         }
         //Retornamos el arraylist del cliente
         return ListaPaciente;
-    }
-    
-    
+    }   
 }
