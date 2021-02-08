@@ -10,6 +10,7 @@ import vista.CambiarPass;
 import vista.DatosAcceso;
 import vista.Menu;
 import vista.NuevoUsuario;
+import vista.RegistrarRoom;
 import vista.RegistroDoctor;
 import vista.RegistroPaciente;
 import vista.Services;
@@ -32,6 +33,7 @@ public class CtrlMenu implements ActionListener, MouseListener {
         this.FrmMenu.JMPacienteRegistro.addActionListener(this);
         this.FrmMenu.JMPacienteServicio.addActionListener(this);       
         this.FrmMenu.JMEntradaDoctores.addActionListener(this);
+        this.FrmMenu.JMAgregarHabitacion.addActionListener(this);
         this.FrmMenu.lblCerrar.addMouseListener(this);
         this.FrmMenu.lblMinimizar.addMouseListener(this);  
     }
@@ -76,6 +78,11 @@ public class CtrlMenu implements ActionListener, MouseListener {
             RegistroDoctor frmRegistroDoctor = new RegistroDoctor();
             CtrlNuevoDoctor ctrlNuevoDoctor = new CtrlNuevoDoctor(frmRegistroDoctor);
             ctrlNuevoDoctor.mostrar();
+        }
+        if(e.getSource() == FrmMenu.JMAgregarHabitacion){
+            RegistrarRoom frmRegistroRoom = new RegistrarRoom();
+            CtrlNuevaRoom ctrlNuevaRoom = new CtrlNuevaRoom(frmRegistroRoom);
+            ctrlNuevaRoom.mostrar();
         }
     }
     
