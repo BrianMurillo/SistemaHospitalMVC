@@ -215,7 +215,7 @@ public class InfoPacienteAdmitido extends javax.swing.JFrame {
         jSeparator13.setForeground(new java.awt.Color(0, 0, 0));
         jPanel2.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 150, 10));
 
-        cbxNoRoom.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6" }));
+        cbxNoRoom.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
         jPanel2.add(cbxNoRoom, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 80, 30));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 380, 530));
@@ -268,7 +268,7 @@ public class InfoPacienteAdmitido extends javax.swing.JFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, true
+                false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -318,7 +318,7 @@ public class InfoPacienteAdmitido extends javax.swing.JFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, true, true, true
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {

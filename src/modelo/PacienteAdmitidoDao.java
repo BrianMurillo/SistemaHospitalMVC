@@ -149,7 +149,7 @@ public class PacienteAdmitidoDao {
     } 
     
     public List ListarPacienteA(){
-        List<PacienteAdmitido> ListaPacienteA = new ArrayList();
+       List<PacienteAdmitido> ListaPacienteA = new ArrayList();
        String sql="Select PatientRegistration.PatientID as 'Patient ID',PatientRegistration.PatientName,PatientRegistration.Gen as 'Gender',PatientRegistration.BG as 'Blood Group',Disease,AdmitDate as 'Admit Date',Room.RoomNo as 'Room No',Doctor.DoctorID as 'Doctor ID',DoctorName as 'Doctor Name',AdmitPatient_Room.AP_Remarks as 'Remarks' from Room,Doctor,PatientRegistration,AdmitPatient_Room where Room.RoomNo=AdmitPatient_Room.RoomNo and Doctor.DoctorID=AdmitPatient_Room.DoctorID and PatientRegistration.PatientID=AdmitPatient_Room.PatientID order by admitdate";
         try {
             con=conexion.getConnection();

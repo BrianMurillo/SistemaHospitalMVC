@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import vista.AltaPacienteRoom;
 import vista.CambiarPass;
 import vista.DatosAcceso;
 import vista.InfoPacienteAdmitido;
@@ -36,6 +37,7 @@ public class CtrlMenu implements ActionListener, MouseListener {
         this.FrmMenu.JMEntradaDoctores.addActionListener(this);
         this.FrmMenu.JMAgregarHabitacion.addActionListener(this);
         this.FrmMenu.JMAdministrarHabitacion.addActionListener(this);
+        this.FrmMenu.JMDescargaHabitacion.addActionListener(this);
         this.FrmMenu.lblCerrar.addMouseListener(this);
         this.FrmMenu.lblMinimizar.addMouseListener(this);  
     }
@@ -90,6 +92,11 @@ public class CtrlMenu implements ActionListener, MouseListener {
             InfoPacienteAdmitido frmIPacienteAdmitido= new InfoPacienteAdmitido();
             CtrlRoomPaciente ctrlRoomPaciente = new CtrlRoomPaciente(frmIPacienteAdmitido);
             ctrlRoomPaciente.mostrar();
+        }
+        if(e.getSource() ==FrmMenu.JMDescargaHabitacion){
+            AltaPacienteRoom FrmAltaPacienteRoom = new AltaPacienteRoom();
+            CtrlAltaPaciente ctrlAltaPaciente = new CtrlAltaPaciente(FrmAltaPacienteRoom);
+            ctrlAltaPaciente.mostrar();
         }
     }
     
