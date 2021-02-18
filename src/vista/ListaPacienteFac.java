@@ -58,10 +58,6 @@ public class ListaPacienteFac extends javax.swing.JFrame {
         });
         TablePacienteFact.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(TablePacienteFact);
-        if (TablePacienteFact.getColumnModel().getColumnCount() > 0) {
-            TablePacienteFact.getColumnModel().getColumn(0).setResizable(false);
-            TablePacienteFact.getColumnModel().getColumn(7).setResizable(false);
-        }
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 970, 270));
 
