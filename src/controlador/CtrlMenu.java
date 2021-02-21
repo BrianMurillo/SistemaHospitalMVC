@@ -9,6 +9,7 @@ import java.awt.event.MouseListener;
 import vista.AltaPacienteRoom;
 import vista.CambiarPass;
 import vista.DatosAcceso;
+import vista.FacturaRoom;
 import vista.InfoPacienteAdmitido;
 import vista.Menu;
 import vista.NuevoUsuario;
@@ -38,6 +39,7 @@ public class CtrlMenu implements ActionListener, MouseListener {
         this.FrmMenu.JMAgregarHabitacion.addActionListener(this);
         this.FrmMenu.JMAdministrarHabitacion.addActionListener(this);
         this.FrmMenu.JMDescargaHabitacion.addActionListener(this);
+        this.FrmMenu.JMFacturaHabitacion.addActionListener(this);
         this.FrmMenu.lblCerrar.addMouseListener(this);
         this.FrmMenu.lblMinimizar.addMouseListener(this);  
     }
@@ -93,10 +95,15 @@ public class CtrlMenu implements ActionListener, MouseListener {
             CtrlRoomPaciente ctrlRoomPaciente = new CtrlRoomPaciente(frmIPacienteAdmitido);
             ctrlRoomPaciente.mostrar();
         }
-        if(e.getSource() ==FrmMenu.JMDescargaHabitacion){
-            AltaPacienteRoom FrmAltaPacienteRoom = new AltaPacienteRoom();
-            CtrlAltaPaciente ctrlAltaPaciente = new CtrlAltaPaciente(FrmAltaPacienteRoom);
+        if(e.getSource() == FrmMenu.JMDescargaHabitacion){
+            AltaPacienteRoom frmAltaPacienteRoom = new AltaPacienteRoom();
+            CtrlAltaPaciente ctrlAltaPaciente = new CtrlAltaPaciente(frmAltaPacienteRoom);
             ctrlAltaPaciente.mostrar();
+        }
+        if(e.getSource() == FrmMenu.JMFacturaHabitacion){
+            FacturaRoom frmFacturaRoom = new FacturaRoom();
+            CtrlFacturaPaciente ctrlFacuraPaciente = new CtrlFacturaPaciente(frmFacturaRoom);
+            ctrlFacuraPaciente.mostrar();
         }
     }
     

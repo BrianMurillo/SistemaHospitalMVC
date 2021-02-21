@@ -50,7 +50,7 @@ public class FacturaRoom extends javax.swing.JFrame {
         txtDischargeDate = new javax.swing.JFormattedTextField();
         jLabel36 = new javax.swing.JLabel();
         txtIdPatient = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnListarPaciente = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         btnGuardar = new javax.swing.JButton();
         btnNuevo = new javax.swing.JButton();
@@ -81,8 +81,8 @@ public class FacturaRoom extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         TableFacturaRoom = new javax.swing.JTable();
         jLabel11 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
+        lblMinimiza = new javax.swing.JLabel();
+        lblCerrar = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -168,7 +168,7 @@ public class FacturaRoom extends javax.swing.JFrame {
         txtIdPatient.setBackground(new java.awt.Color(102, 255, 255));
         txtIdPatient.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
-        jButton1.setText("<");
+        btnListarPaciente.setText("<");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -206,7 +206,7 @@ public class FacturaRoom extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(txtIdPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(35, 35, 35)
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE))
+                        .addComponent(btnListarPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE))
                     .addComponent(txtPatientName))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -217,7 +217,7 @@ public class FacturaRoom extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(txtIdPatient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(btnListarPaciente))
                 .addGap(17, 17, 17)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -358,8 +358,6 @@ public class FacturaRoom extends javax.swing.JFrame {
 
         txtBillingDate.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
-        txtBillNo.setEditable(false);
-        txtBillNo.setBackground(new java.awt.Color(102, 255, 255));
         txtBillNo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -456,10 +454,7 @@ public class FacturaRoom extends javax.swing.JFrame {
 
         TableFacturaRoom.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "ID_PACIENTE", "NOMBRE_PACIENTE", "SERVICIO"
@@ -503,11 +498,11 @@ public class FacturaRoom extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 30, 230, 640));
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/minimiza.png"))); // NOI18N
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 0, -1, 30));
+        lblMinimiza.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/minimiza.png"))); // NOI18N
+        getContentPane().add(lblMinimiza, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 0, -1, 30));
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cerrar.png"))); // NOI18N
-        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 0, -1, 30));
+        lblCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cerrar.png"))); // NOI18N
+        getContentPane().add(lblCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 0, -1, 30));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pago.png"))); // NOI18N
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 690));
@@ -520,22 +515,20 @@ public class FacturaRoom extends javax.swing.JFrame {
      */
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable TableFacturaRoom;
+    public javax.swing.JTable TableFacturaRoom;
     public javax.swing.JButton btnActualizar;
     public javax.swing.JButton btnBorrar;
     public javax.swing.JButton btnGuardar;
+    public javax.swing.JButton btnListarPaciente;
     public javax.swing.JButton btnNuevo;
     public javax.swing.JButton btnObtenerDatos;
     public javax.swing.JComboBox cbxPaymentMode;
-    public javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    public javax.swing.JLabel jLabel15;
-    public javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel29;
@@ -559,6 +552,8 @@ public class FacturaRoom extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JLabel lblCerrar;
+    public javax.swing.JLabel lblMinimiza;
     public javax.swing.JFormattedTextField txtAdmitDate;
     public javax.swing.JTextField txtBillNo;
     public javax.swing.JTextField txtBillingDate;

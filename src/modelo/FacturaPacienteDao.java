@@ -47,7 +47,7 @@ public class FacturaPacienteDao {
         }
     }
     
-    public boolean ActuslizarAltaPaciente(FacturaPaciente facturaPaciente){
+    public boolean ActualizarAltaPaciente(FacturaPaciente facturaPaciente){
        String sql= "UPDATE Bill_Room SET BillingDate=?,RoomCharges=?,ServiceCharges=?,PaymentMode=?,PaymentModeDetails=?,TotalCharges=?,NoOfDays=?,TotalRoomCharges=?,BillNo=? WHERE DischargeID=?";
         try {
             con=conexion.getConnection();
@@ -110,29 +110,30 @@ public class FacturaPacienteDao {
                 facturaPaciente.setNamePaciente(rs.getString("Patient Name"));
                 facturaPaciente.setGender(rs.getString("Gender"));
                 facturaPaciente.setBloodGroup(rs.getString("Blood Group"));
-                facturaPaciente.setDisease(rs.getString(rs.getString("Disease")));
+                facturaPaciente.setDisease(rs.getString("Disease"));
                 facturaPaciente.setAdmitDate(rs.getString("Admit Date"));
                 facturaPaciente.setNoRoom(rs.getInt("Room No"));
                 facturaPaciente.setIdDoctor(rs.getInt("Doctor ID"));
                 facturaPaciente.setNameDoctor(rs.getString("Doctor Name"));
                 facturaPaciente.setCloseDate(rs.getString("Discharge Date"));
-                facturaPaciente.setTotalChargesRoom(rs.getInt("Room Charges"));
+                facturaPaciente.setChargesRoom(rs.getInt("Room Charges"));
                 facturaPaciente.setChargesService(rs.getInt("Service Charges"));
                 facturaPaciente.setDateBill(rs.getString("Billing Date"));
                 facturaPaciente.setModePay(rs.getString("Payement Mode"));
-                facturaPaciente.setDetailsModePay(rs.getString("Payement Mode Details"));
+                facturaPaciente.setDetailsModePay(rs.getString("Payment Mode Details"));
                 facturaPaciente.setTotalCharges(rs.getInt("Total Charges"));
                 facturaPaciente.setNoDays(rs.getInt("No. Of Days"));
                 facturaPaciente.setTotalChargesRoom(rs.getInt("Total Room Charges"));        
                 ListaFacturaPaciente.add(facturaPaciente);
             }
         } catch (SQLException e) {
+            System.out.println(e.toString());
         }
         return ListaFacturaPaciente;
     }
     
-     public List ListarPaciente(){
-        String sql="Select PatientRegistration.PatientID as 'Patient ID',PatientRegistration.PatientName as 'Patient Name',PatientRegistration.Gen as 'Gender',PatientRegistration.BG as 'Blood Group',Disease,AdmitDate as 'Admit Date',Room.RoomNo as 'Room No',RoomCharges as 'Room Charges',Doctor.DoctorID as 'Doctor ID',DoctorName as 'Doctor Name',DischargeDate as 'Discharge Date',DP_Remarks as 'Remarks' from Room,Doctor,PatientRegistration,AdmitPatient_Room,DischargePatient_Room where Room.RoomNo=AdmitPatient_Room.RoomNo and Doctor.DoctorID=AdmitPatient_Room.DoctorID and PatientRegistration.PatientID=AdmitPatient_Room.PatientID  and AdmitPatient_Room.PatientID= DischargePatient_Room.admitID order by Dischargedate";
+     public List ListarPacienteFactura(){
+        String sql="Select PatientRegistration.PatientID as 'Patient ID',PatientRegistration.PatientName as 'Patient Name',PatientRegistration.Gen as 'Gender',PatientRegistration.BG as 'Blood Group',Disease,AdmitDate as 'Admit Date',Room.RoomNo as 'Room No',Room.RoomCharges as 'Room Charges',Doctor.DoctorID as 'Doctor ID',DoctorName as 'Doctor Name',DischargeDate as 'Discharge Date',DP_Remarks as 'Remarks' from Room,Doctor,PatientRegistration,AdmitPatient_Room,DischargePatient_Room where Room.RoomNo=AdmitPatient_Room.RoomNo and Doctor.DoctorID=AdmitPatient_Room.DoctorID and PatientRegistration.PatientID=AdmitPatient_Room.PatientID  and AdmitPatient_Room.PatientID= DischargePatient_Room.admitID order by Dischargedate";
         List<FacturaPaciente> ListaPaciente = new ArrayList();
         try {
             con=conexion.getConnection();
@@ -144,10 +145,10 @@ public class FacturaPacienteDao {
                 facturaPaciente.setNamePaciente(rs.getString("Patient Name"));
                 facturaPaciente.setGender(rs.getString("Gender"));
                 facturaPaciente.setBloodGroup(rs.getString("Blood Group"));
-                facturaPaciente.setDisease(rs.getString(rs.getString("Disease")));
+                facturaPaciente.setDisease(rs.getString("Disease"));
                 facturaPaciente.setAdmitDate(rs.getString("Admit Date"));
                 facturaPaciente.setNoRoom(rs.getInt("Room No"));             
-                facturaPaciente.setTotalChargesRoom(rs.getInt("Room Charges"));        
+                facturaPaciente.setChargesRoom(rs.getInt("Room Charges"));        
                 facturaPaciente.setIdDoctor(rs.getInt("Doctor ID"));
                 facturaPaciente.setNameDoctor(rs.getString("Doctor Name"));
                 facturaPaciente.setCloseDate(rs.getString("Discharge Date"));
@@ -155,8 +156,29 @@ public class FacturaPacienteDao {
                 ListaPaciente.add(facturaPaciente);
             }
         } catch (SQLException e) {
+            System.out.println(e.toString());
         }
         return ListaPaciente;
     }
+     
+     public List ListarPaciente(){
+        String sql="SELECT PatientRegistration.PatientID as 'Patient ID', PatientName as 'Patient Name',sum(serviceCharges) as 'Service Charges' from Services,PatientRegistration where Services.PatientID=PatientRegistration.PatientID group by PatientRegistration.PatientID,PatientName order by PatientName";
+        List<FacturaPaciente> ListaPaciente= new ArrayList();
+         try {
+             con = conexion.getConnection();
+             ps = con.prepareStatement(sql);
+             rs = ps.executeQuery();
+             while(rs.next()){
+                 FacturaPaciente facturaPaciente = new FacturaPaciente();
+                 facturaPaciente.setIdPaciente(rs.getInt("Patient ID"));
+                 facturaPaciente.setNamePaciente(rs.getString("Patient Name"));
+                 facturaPaciente.setChargesService(rs.getInt("Service Charges"));
+                 ListaPaciente.add(facturaPaciente);
+             }
+         } catch (SQLException e) {
+             System.out.println(e.toString());
+         }
+         return ListaPaciente;
+     }
    
 }
