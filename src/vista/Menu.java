@@ -55,7 +55,7 @@ public class Menu extends javax.swing.JFrame {
         jMenu15 = new javax.swing.JMenu();
         JMFacturaHabitacion = new javax.swing.JMenuItem();
         jMenu11 = new javax.swing.JMenu();
-        jMenuItem11 = new javax.swing.JMenuItem();
+        JMenuAcercaDe = new javax.swing.JMenuItem();
 
         jMenu3.setText("File");
         jMenuBar2.add(jMenu3);
@@ -193,10 +193,10 @@ public class Menu extends javax.swing.JFrame {
         jMenu11.setText("AYUDA");
         jMenu11.setFont(new java.awt.Font("Yu Gothic Medium", 0, 18)); // NOI18N
 
-        jMenuItem11.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/acercaH.png"))); // NOI18N
-        jMenuItem11.setText("Acerca");
-        jMenu11.add(jMenuItem11);
+        JMenuAcercaDe.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
+        JMenuAcercaDe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/acercaH.png"))); // NOI18N
+        JMenuAcercaDe.setText("Acerca");
+        jMenu11.add(JMenuAcercaDe);
 
         jMenuBar1.add(jMenu11);
 
@@ -221,6 +221,7 @@ public class Menu extends javax.swing.JFrame {
     public javax.swing.JMenuItem JMNuevoUsuario;
     public javax.swing.JMenuItem JMPacienteRegistro;
     public javax.swing.JMenuItem JMPacienteServicio;
+    public javax.swing.JMenuItem JMenuAcercaDe;
     private javax.swing.JLabel jLabel1;
     public javax.swing.JMenu jMenu1;
     public javax.swing.JMenu jMenu10;
@@ -240,7 +241,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuBar jMenuBar3;
-    public javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JLabel lblCerrar;
     public javax.swing.JLabel lblMinimizar;
