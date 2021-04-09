@@ -34,5 +34,5 @@
 ![6](https://github.com/Brian-54/SistemaHospitalMVC/blob/master/src/capturas/12.JPG?raw=true "6")
 ##### Pre-requisitos de compilación 📋
 - Java JRE y JDK.
-
 - MySql
+- script BD   SistemaHospitalMVC/src/BD/
