@@ -43,12 +43,12 @@ public class AcercaDe extends javax.swing.JFrame {
         btnFb.setBackground(new java.awt.Color(51, 51, 255));
         btnFb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fb.png"))); // NOI18N
         btnFb.setBorder(null);
-        jPanel1.add(btnFb, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 50, -1));
+        jPanel1.add(btnFb, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 40, -1));
 
         btnGit.setBackground(new java.awt.Color(153, 204, 255));
         btnGit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/github.png"))); // NOI18N
         btnGit.setBorder(null);
-        jPanel1.add(btnGit, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 50, -1));
+        jPanel1.add(btnGit, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 40, -1));
 
         lblCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cerrar.png"))); // NOI18N
         jPanel1.add(lblCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 10, -1, -1));

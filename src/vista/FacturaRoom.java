@@ -83,6 +83,7 @@ public class FacturaRoom extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         lblMinimiza = new javax.swing.JLabel();
         lblCerrar = new javax.swing.JLabel();
+        btnPdf = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -504,6 +505,9 @@ public class FacturaRoom extends javax.swing.JFrame {
         lblCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cerrar.png"))); // NOI18N
         getContentPane().add(lblCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 0, -1, 30));
 
+        btnPdf.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pdf.png"))); // NOI18N
+        getContentPane().add(btnPdf, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 90, 40, -1));
+
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pago.png"))); // NOI18N
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 690));
 
@@ -522,6 +526,7 @@ public class FacturaRoom extends javax.swing.JFrame {
     public javax.swing.JButton btnListarPaciente;
     public javax.swing.JButton btnNuevo;
     public javax.swing.JButton btnObtenerDatos;
+    public javax.swing.JButton btnPdf;
     public javax.swing.JComboBox cbxPaymentMode;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

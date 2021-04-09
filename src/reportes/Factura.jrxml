@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0d670fb1-f6ac-44d8-ae0b-069e8cb1138d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="PacienteID" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[Select PatientRegistration.PatientID as 'Patient ID',PatientRegistration.PatientName as 'Patient Name',Disease,AdmitDate as 'Admit Date',DischargeDate as 'Discharge Date',
+DoctorName as 'Doctor Name',Bill_Room.BillingDate as 'Billing Date',NoOfDays as 'No. Of Days',Bill_Room.ServiceCharges as 'Service Charges',TotalCharges as 'Total Charges' 
+
+from Room,Doctor,PatientRegistration,AdmitPatient_Room,DischargePatient_Room,Bill_Room 
+
+where Room.RoomNo=AdmitPatient_Room.RoomNo and
+Doctor.DoctorID=AdmitPatient_Room.DoctorID and
+PatientRegistration.PatientID=AdmitPatient_Room.PatientID  and 
+AdmitPatient_Room.PatientID= DischargePatient_Room.admitID and
+Bill_Room.DischargeID=DischargePatient_Room.AdmitID AND
+patientregistration.PatientID=$P!{PacienteID}
+]]>
+	</queryString>
+	<field name="Patient ID" class="java.lang.Integer"/>
+	<field name="Patient Name" class="java.lang.String"/>
+	<field name="Disease" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Admit Date" class="java.sql.Date"/>
+	<field name="Discharge Date" class="java.sql.Date"/>
+	<field name="Doctor Name" class="java.lang.String"/>
+	<field name="Billing Date" class="java.sql.Date"/>
+	<field name="No. Of Days" class="java.lang.Integer"/>
+	<field name="Service Charges" class="java.lang.Integer"/>
+	<field name="Total Charges" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="137" y="0" width="303" height="37" uuid="7d95388e-2f4f-4ef4-af01-a3cb1bb5227e"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Factura Hospital UPIICSA]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="12" width="40" height="40" uuid="f8793006-5e7b-45a9-9d46-29001ecd1594"/>
+				<imageExpression><![CDATA["C:\\Users\\user\\Desktop\\CURSO JAVA\\SisHospital\\src\\img\\facturaH.png"]]></imageExpression>
+			</image>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="127" y="54" width="100" height="20" uuid="826e8b06-2f55-4caf-a612-6a75c52f239a"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="21" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="54" height="20" uuid="3abddce6-be6d-4d83-99a4-1b3970683b69"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Patient ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="54" y="0" width="69" height="20" uuid="6ba5b771-2bfd-48a3-988d-146b0a2b2e0f"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Patient Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="123" y="0" width="68" height="20" uuid="b92f986a-1d9a-4d1f-8c89-59f06d6bdb35"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Disease]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="191" y="0" width="67" height="20" uuid="6acaf88f-f6d2-4813-a8f7-75bd01efb6b0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Admit Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="258" y="0" width="83" height="20" uuid="281b97c9-b43f-4ec7-a280-ee7d7de25da9"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Discharge Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="341" y="0" width="89" height="20" uuid="5047a0ad-2e9b-406c-befa-67b9e76ba14f"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Doctor Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="0" width="60" height="20" uuid="6a93dd47-9047-45f9-930e-de5abe2b9046"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[No. Of Days]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="490" y="0" width="65" height="20" uuid="f44bfa11-1b63-45a4-8927-07817ce7bdcb"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Charges]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="54" height="20" uuid="84f45ea7-eacd-4ee1-b6f0-051319c19709"/>
+				<textFieldExpression><![CDATA[$F{Patient ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="54" y="0" width="69" height="20" uuid="3c826d10-1449-49b2-aa76-d9094dfd0ec6"/>
+				<textFieldExpression><![CDATA[$F{Patient Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="0" width="54" height="20" uuid="e79ce53f-6dae-4704-83ba-917bcaac99cb"/>
+				<textFieldExpression><![CDATA[$F{Disease}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="0" width="67" height="20" uuid="bed9d40c-f508-41b1-b575-50d7c4c8f2d5"/>
+				<textFieldExpression><![CDATA[$F{Admit Date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="258" y="0" width="83" height="20" uuid="3e624b93-fdab-4247-a2d2-cb0a1e4846ee"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{Discharge Date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="0" width="89" height="20" uuid="d76ab8d4-75f1-4e89-9852-7e1ef1a9af90"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Doctor Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="0" width="60" height="20" uuid="c2e04ad0-b848-46a8-9621-68e9e5dc504d"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{No. Of Days}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="490" y="0" width="50" height="20" uuid="39d84fe1-eabd-445d-bd8b-8e89cde8fec2"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Total Charges}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="540" y="0" width="15" height="20" uuid="87c06208-a248-4078-ae05-34b68c65e304"/>
+				<text><![CDATA[$]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="4" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="210" y="0" width="80" height="20" uuid="7c0f6d51-7558-4af3-9436-6d09bab2c67d"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="290" y="0" width="40" height="20" uuid="f8110727-2386-4b48-9c4b-3cf4820f644f"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="4" splitType="Stretch"/>
+	</summary>
+</jasperReport>

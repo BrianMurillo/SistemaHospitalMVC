@@ -6,19 +6,29 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.sql.Connection;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 import javax.swing.table.DefaultTableModel;
+import modelo.Conexion;
 import modelo.FacturaPaciente;
 import modelo.FacturaPacienteDao;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import vista.FacturaRoom;
 import vista.ListaFacturaPaciente;
 import vista.ListaPacienteFac;
@@ -45,6 +55,7 @@ public class CtrlFacturaPaciente implements ActionListener,MouseListener {
         this.frmFacturaRoom.btnNuevo.addActionListener(this);
         this.frmFacturaRoom.btnObtenerDatos.addActionListener(this);
         this.frmFacturaRoom.btnListarPaciente.addActionListener(this);
+        this.frmFacturaRoom.btnPdf.addActionListener(this);
         this.frmFacturaRoom.lblCerrar.addMouseListener(this);
         this.frmFacturaRoom.lblMinimiza.addMouseListener(this);
         this.frmListaFacturaPaciente.lblCerrar.addMouseListener(this);
@@ -124,6 +135,31 @@ public class CtrlFacturaPaciente implements ActionListener,MouseListener {
             frmListaFacturaPaciente.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
             limpiarTablaPacienteFactura();
             listarTablaPacienteFactura();
+        }
+        if(e.getSource() == frmFacturaRoom.btnPdf){
+            if(!"".equals(frmFacturaRoom.txtIdPatient.getText())){
+            JasperReport reporte = null;
+            String path = "src\\reportes\\Factura.jasper";
+            
+            Map parametro=new HashMap();
+            parametro.put("PacienteID",Integer.parseInt(frmFacturaRoom.txtIdPatient.getText()));
+            
+            try {
+                Conexion con = new Conexion();
+                Connection coon=con.getConnection();
+                reporte = (JasperReport) JRLoader.loadObjectFromFile(path);
+                JasperPrint jprint = JasperFillManager.fillReport(reporte,parametro,coon);
+                
+                JasperViewer view = new JasperViewer(jprint,false);
+                
+                view.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+                view.setVisible(true);
+            } catch (JRException ex) {
+                Logger.getLogger(CtrlFacturaPaciente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            }else{
+                JOptionPane.showMessageDialog(null, "Ingrese el Id del Paciente");
+            }
         }
     }
     
