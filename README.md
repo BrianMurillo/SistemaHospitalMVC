@@ -1,4 +1,4 @@
-# Punto de venta CienciasUPIICSA
+# Sistema Hospital
 ### Herramientas de uso:
 - IDE Neatbeans 8.0.2
 - Phpmyadmin de Base Datos
